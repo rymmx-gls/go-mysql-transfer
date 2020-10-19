@@ -188,3 +188,11 @@ GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-bu
 
 53 directories, 53 files
 
+GOROOT=/root/src/golang_working_dir/sdk/go #gosetup
+GOPATH=/root/src/golang_working_dir #gosetup
+/root/src/golang_working_dir/sdk/go/bin/go build -o /tmp/___go_build_main_go /root/src/golang_working_dir/go-mysql-transfer/main.go #gosetup
+/tmp/___go_build_main_go
+2020-10-19 20:44:38.002585 I | GOMAXPROCS :4
+2020-10-19 20:44:38.003138 I | source  mysql(127.0.0.1:6033)
+2020-10-19 20:44:38.003276 I | destination redis(127.0.0.1:6379)
+2020-10-19 20:44:38.067241 I | transfer run from pos mysql-bin.000011 1473946
