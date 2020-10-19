@@ -1,12 +1,5 @@
-打开你的终端并执行
-
 $ go env -w GO111MODULE=on
 $ go env -w GOPROXY=https://goproxy.cn,direct
-完成。
-
-macOS 或 Linux
-
-打开你的终端并执行
 
 $ export GO111MODULE=on
 $ export GOPROXY=https://goproxy.cn
@@ -28,21 +21,8 @@ go env -w GOPRIVATE=*.corp.example.com
 go env -w GOPRIVATE=example.com/org_name
 
 
-欢迎访问阿里云Go Module代理仓库服务
-
-
-简介
-go module公共代理仓库，代理并缓存go模块。你可以利用该代理来避免DNS污染导致的模块拉取缓慢或失败的问题，加速你的构建
-
-
 地址
 https://mirrors.aliyun.com/goproxy/
-
-
-使用帮助
-1.使用go1.11以上版本并开启go module机制
-
-2.导出GOPROXY环境变量
 
 export GOPROXY=https://mirrors.aliyun.com/goproxy/
 
@@ -56,4 +36,155 @@ go get -d -v ./...
 -d标志只下载代码包，不执行安装命令；
 -v打印详细日志和调试日志。这里加上这个标志会把每个下载的包都打印出来；
 ./...这个表示路径，代表当前目录下所有的文件。
+
+
+
+[root@localhost go-mysql-transfer]# go env
+GO111MODULE="on"
+GOARCH="amd64"
+GOBIN=""
+GOCACHE="/root/.cache/go-build"
+GOENV="/root/.config/go/env"
+GOEXE=""
+GOFLAGS=""
+GOHOSTARCH="amd64"
+GOHOSTOS="linux"
+GOINSECURE=""
+GOMODCACHE="/root/src/golang_working_dir/pkg/mod"
+GONOPROXY=""
+GONOSUMDB=""
+GOOS="linux"
+GOPATH="/root/src/golang_working_dir"
+GOPRIVATE=""
+GOPROXY="https://goproxy.cn,direct"
+GOROOT="/root/src/golang_working_dir/sdk/go"
+GOSUMDB="sum.golang.org"
+GOTMPDIR=""
+GOTOOLDIR="/root/src/golang_working_dir/sdk/go/pkg/tool/linux_amd64"
+GCCGO="gccgo"
+AR="ar"
+CC="gcc"
+CXX="g++"
+CGO_ENABLED="1"
+GOMOD="/root/src/golang_working_dir/go-mysql-transfer/go.mod"
+CGO_CFLAGS="-g -O2"
+CGO_CPPFLAGS=""
+CGO_CXXFLAGS="-g -O2"
+CGO_FFLAGS="-g -O2"
+CGO_LDFLAGS="-g -O2"
+PKG_CONFIG="pkg-config"
+GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build624574408=/tmp/go-build -gno-record-gcc-switches"
+
+
+
+[root@localhost src]# tree -L 3 ./golang_working_dir
+./golang_working_dir
+├── go-mysql-transfer
+│   ├── app.yml
+│   ├── app.yml.bak
+│   ├── global
+│   │   ├── config.go
+│   │   ├── debug.go
+│   │   ├── metrics.go
+│   │   ├── model.go
+│   │   ├── rate_counter.go
+│   │   └── rule.go
+│   ├── go.mod
+│   ├── go.sum
+│   ├── LICENSE
+│   ├── logs
+│   │   ├── db
+│   │   └── log
+│   ├── main.go
+│   ├── README.md
+│   ├── README_RYMMX.md
+│   ├── service
+│   │   ├── application_service.go
+│   │   ├── cluster
+│   │   ├── cluster_service.go
+│   │   ├── endpoint
+│   │   ├── handler.go
+│   │   ├── luaengine
+│   │   ├── stock_service.go
+│   │   └── transfer_service.go
+│   ├── start_service.sh
+│   ├── storage
+│   │   ├── bolt_position_storage.go
+│   │   ├── bolt_row_storage.go
+│   │   ├── election_storage.go
+│   │   ├── etcd_position_storage.go
+│   │   ├── position_storage.go
+│   │   ├── storage.go
+│   │   └── zk_position_storage.go
+│   └── util
+│       ├── byteutil
+│       ├── dateutil
+│       ├── etcdutil
+│       ├── fileutil
+│       ├── logutil
+│       ├── netutil
+│       ├── stringutil
+│       └── zkutil
+├── pkg
+│   ├── mod
+│   │   ├── cache
+│   │   ├── github.com
+│   │   ├── go.etcd.io
+│   │   ├── golang.org
+│   │   ├── go.mongodb.org
+│   │   ├── google.golang.org
+│   │   ├── gopkg.in
+│   │   ├── go.uber.org
+│   │   └── stathat.com
+│   └── sumdb
+│       └── sum.golang.org
+├── sdk
+│   └── go
+│       ├── api
+│       ├── AUTHORS
+│       ├── bin
+│       ├── CONTRIBUTING.md
+│       ├── CONTRIBUTORS
+│       ├── doc
+│       ├── favicon.ico
+│       ├── lib
+│       ├── LICENSE
+│       ├── misc
+│       ├── PATENTS
+│       ├── pkg
+│       ├── README.md
+│       ├── robots.txt
+│       ├── SECURITY.md
+│       ├── src
+│       ├── test
+│       └── VERSION
+└── src
+    ├── go-mysql-transfer
+    │   ├── app.yml
+    │   ├── global
+    │   ├── go.mod
+    │   ├── goproxy.go
+    │   ├── go.sum
+    │   ├── LICENSE
+    │   ├── main.go
+    │   ├── README.md
+    │   ├── README_RYMMX.md
+    │   ├── service
+    │   ├── start_service.sh
+    │   ├── storage
+    │   └── util
+    └── go-mysql-transfer-1.0.1
+        ├── app.yml
+        ├── global
+        ├── go.mod
+        ├── go.sum
+        ├── LICENSE
+        ├── main.go
+        ├── README.md
+        ├── service
+        ├── start_service.sh
+        ├── storage
+        └── util
+
+53 directories, 53 files
 
